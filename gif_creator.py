@@ -1,9 +1,19 @@
 import imageio.v3 as iio
+import os
+from os import listdir
 
-filenames = ['pic-hair1.jpg', 'pic-hair2.jpg', 'pic-hair3.jpg', 'pic-hair4.jpg', 'pic-hair5.jpg']
-images = [ ]
+directory = os.getcwd()
+
+filenames = []
+images = []
+
+for filename in os.listdir(directory):
+  if filename.endswith(".jpg"):
+    filenames.append(filename)
+
+filenames.sort()
 
 for filename in filenames:
   images.append(iio.imread(filename))
 
-iio.imwrite('hair.gif', images, duration = 500, loop = 0)
+iio.imwrite("hair.gif", images, duration = 500, loop = 0)
