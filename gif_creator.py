@@ -1,6 +1,5 @@
 import imageio.v3 as iio
 import os
-from os import listdir
 #getting current directory
 directory = os.getcwd()
 
@@ -17,4 +16,5 @@ for filename in filenames:
   images.append(iio.imread(filename))
 
 iio.imwrite("hair.gif", images, duration = 500, loop = 0)
+
 
